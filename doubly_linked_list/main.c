@@ -15,5 +15,16 @@ int main(void)
     else
         printf("La liste n'est pas vide !\n");
 
+    liste = push_front_list(liste, 5);
+    liste = push_front_list(liste, 9);
+    liste = push_front_list(liste, 3);
+
+    print_dlist(liste);
+    liste = clear_list(liste);
+
+    printf("Longueur de la dlist : %d\n", liste->length);
+
+    print_dlist(liste);
+
     return 0;
 }

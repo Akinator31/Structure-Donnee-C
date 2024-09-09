@@ -12,23 +12,28 @@ typedef enum {
 
 typedef struct dlist_node
 {
-    int value;                 // Valeur stockée dans le nœud
-    struct dlist_node *next;   // Pointeur vers le nœud suivant
-    struct dlist_node *prev;   // Pointeur vers le nœud précédent
+    int value;
+    struct dlist_node *next;
+    struct dlist_node *prev;
 
-} dlist_node, *dlistNodePtr;
+} dlist_node;
 
 typedef struct Dlist
 {
-    int length;               // Nombre d'éléments dans la liste
-    struct dlist_node *head;  // Pointeur vers le premier nœud (anciennement 'begin')
-    struct dlist_node *tail;  // Pointeur vers le dernier nœud (anciennement 'end')
+    int length;
+    struct dlist_node *head;
+    struct dlist_node *tail;
 
-} Dlist, *DlistPtr;
+} Dlist;
 
 Dlist *create_dlist();
 dlist_node *create_dlist_node(int value);
 Bool is_dlist_empty(Dlist *list);
 Dlist *push_front_list(Dlist *list, int value);
+Dlist *push_back_list(Dlist *list, int value);
+Dlist *pop_front_dlist(Dlist *list);
+Dlist *pop_back_dlist(Dlist *list);
+void print_dlist(Dlist *list);
+Dlist *clear_list(Dlist *list);
 
-#endif //DOUBLY_LINKED_LIST_H
+#endif
